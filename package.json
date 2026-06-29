@@ -22,12 +22,16 @@
     "prisma:migratetest": "npx dotenv-cli -e .env.test -- npx prisma migrate deploy"
   },
   "dependencies": {
+    "@apollo/server": "^5.5.1",
+    "@nestjs/apollo": "^13.4.2",
     "@nestjs/common": "^11.0.1",
     "@nestjs/config": "^4.0.4",
     "@nestjs/core": "^11.0.1",
+    "@nestjs/graphql": "^13.4.2",
     "@nestjs/platform-express": "^11.0.1",
     "@prisma/client": "^7.8.0",
     "dotenv-cli": "^11.0.0",
+    "graphql": "^16.14.2",
     "reflect-metadata": "^0.2.2",
     "rxjs": "^7.8.1"
   },
