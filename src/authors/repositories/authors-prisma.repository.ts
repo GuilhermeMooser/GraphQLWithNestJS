@@ -13,8 +13,12 @@ export class AuthorsPrismaRepository implements IAuthorsRepository {
 
   constructor(private prisma: PrismaService) {}
 
-  create(data: ICreateAuthor): Promise<Author> {
-    throw new Error('Method not implemented.');
+  async create(data: ICreateAuthor): Promise<Author> {
+    const author = await this.prisma.author.create({
+      data,
+    });
+
+    return author;
   }
   update(author: Author): Promise<Author> {
     throw new Error('Method not implemented.');
@@ -42,7 +46,7 @@ export class AuthorsPrismaRepository implements IAuthorsRepository {
     });
 
     if (!author) {
-      throw new NotFoundError(`Author not found using id ${id}`);
+      throw new NotFoundError(`Author not found using ID ${id}`);
     }
 
     return author;
